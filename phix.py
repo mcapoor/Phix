@@ -12,22 +12,21 @@ import blue
 engine = pyttsx3.init('sapi5') # see http://pyttsx.readthedocs.org/en/latest/engine.html#pyttsx.init
 engine.setProperty('rate', 150)
 def speak(text):
-        engine.say(text)
-        engine.runAndWait()
+    engine.say(text)
+    engine.runAndWait()
 
 recognizer = speech_recognition.Recognizer()
 mic = speech_recognition.Microphone()
 def recieveAudio():
     # Record Audio
-    r = speech_recognition.Recognizer()
     with speech_recognition.Microphone() as source:
         print("What do you need?")
-        audio = r.listen(source)
+        audio = recognizer.listen(source)
 
     # Speech recognition using Google Speech Recognition
     data = ""
     try:
-        data = r.recognize_google(audio)
+        data = recognizer.recognize_google(audio)
         print("You said: " + data)
     except speech_recognition.UnknownValueError:
         print("Phix could not understand audio")
