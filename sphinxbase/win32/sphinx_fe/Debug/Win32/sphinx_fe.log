@@ -1,0 +1,4 @@
+﻿cl : Command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  sphinx_fe.c
+c:\users\capoo\desktop\phix assistant\sphinxbase\src\sphinx_fe\sphinx_fe.c(371): warning C4018: '<': signed/unsigned mismatch
+  sphinx_fe.vcxproj -> C:\Users\capoo\Desktop\Phix Assistant\sphinxbase\\bin\Debug\Win32\sphinx_fe.exe
