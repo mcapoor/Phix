@@ -56,6 +56,7 @@ def phix(data):
         speak(local_time)
 
     if "headphones" in data:
+        #moved to other file for simplicity
         blue.connect()
 
     #NOT WORKING
