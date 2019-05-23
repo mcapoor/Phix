@@ -6,6 +6,8 @@ import blue
 import music
 import speak
 import listen
+import alarm
+import phone
 
 def phix(data):
     if "hello" in data:
@@ -22,7 +24,7 @@ def phix(data):
         print(response)
         speak.speak(response)
 
-    if "time" in data:
+    if "what time" in data:
         local_time = time.asctime(time.localtime(time.time()))
         print(local_time)
         speak.speak(local_time)
@@ -44,6 +46,22 @@ def phix(data):
     if "pause music" in data:
         music.pause()
 
+    if "timer for" in data:
+        alarm.play_tone(data)
+
+    if "make a call" in data:
+        print("Target Phone Number?")
+        speak.speak("what is the number you want to call?")
+        
+        audio = listen.recieveAudio()
+        
+        print("Confirm?")
+        speak.speak("is this the correct number?")
+        verify = listen.recieveAudio()
+
+        if "yes" in verify:
+            phone.call(audio)
+        
     #NOT WORKING
     '''
     if "where is" in data:
